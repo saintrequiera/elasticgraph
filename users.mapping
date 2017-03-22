@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "number_of_replicas": 0,
+    "number_of_shards": 5
+  },
+  "mappings": {
+    "users":{
+      "properties": {
+        "dz_id": {
+          "type": "integer"
+        },
+        "artist_names": {
+          "type": "keyword"
+        },
+        "art_ids":{
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
