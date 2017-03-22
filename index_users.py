@@ -5,11 +5,7 @@ import rawes
 from rawes.elastic_exception import ElasticException
 import requests
 from requests.exceptions import Timeout, ConnectionError
-import fileinput
 import sys, traceback, time
-import smtplib
-from email.mime.text import MIMEText
-import socket
 import json
 
 bulk_data = ''
@@ -18,13 +14,11 @@ bulk_size = 100
 total = 0
 number = 0
 
-url = 'http://832231001b9bffdc56aac9e6805a39f7.eu-west-1.aws.found.io:9200'
+url = 'YOUR URL'
 endpoint =  'dz-music/users/_bulk'
 
-es = rawes.Elastic(url, auth=('aurelien', 'pfnighado45klnbgls'))
-#~ conn = ES('localhost:9200', timeout, bulk_size, None, None, max_retries)
+es = rawes.Elastic(url, auth=('YOUR USERNAME', 'YOUR PASSWORD'))
 
-#~ head = """{"index":{"_type":\""""+ _type +"""\","_index":\""""+ _index +"""\"}}"""
 head = json.dumps({ "index" : { } })
 
 for line in sys.stdin:
